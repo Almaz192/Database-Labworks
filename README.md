@@ -1,44 +1,18 @@
-<div align="center">
-
 # Database Labworks
- 
-### Terminal commands, configuration, and results
 
-<img src="https://github.com/user-attachments/assets/59c9adb6-a5bd-4366-ac98-c9e93fa333dd" width="800" alt="Linux Labworks preview" />
+**Almaz Akzholtoev** · PostgreSQL · macOS
 
-</div>
+Laboratory work for Weeks 1–8. Each folder contains a short report, runnable SQL, command output, and screenshots.
 
----
+| Week | Laboratory work |
+| --- | --- |
+| 1 | [Introduction to Relational Databases](week01/README.md) |
+| 2 | [Installing PostgreSQL and pgAdmin](week02/README.md) |
+| 3 | [Basic psql Commands](week03/README.md) |
+| 4 | [First SQL Query](week04/README.md) |
+| 5 | [Databases](week05/README.md) |
+| 6 | [Tables, Data Types and Constraints](week06/README.md) |
+| 7 | [Primary Keys](week07/README.md) |
+| 8 | [Foreign Keys and Relationships](week08/README.md) |
 
-## Table of Contents
-
-- [Labwork #3](#labwork-3)
-- [Labwork #4](#labwork-4)
-
----
-
-## Labwork #3
-
-### Terminal Output
-
-<img src="https://github.com/user-attachments/assets/a75d83d3-1d20-4b27-8e70-05e996d680ab" width="100%" alt="Labwork 3 terminal screenshot" />
-
----
-
-## Labwork #4
-
-### Terminal Output — Part 1
-
-<img src="https://github.com/user-attachments/assets/29ca6793-7a24-4aab-a62d-73bbd49d30f2" width="100%" alt="Labwork 4 terminal screenshot, part 1" />
-
-### Terminal Output — Part 2
-
-<img src="https://github.com/user-attachments/assets/bacdfe3b-fad8-4b67-ba50-55da7bffed0e" width="100%" alt="Labwork 4 terminal screenshot, part 2" />
-
----
-
-<div align="center">
-
-**Completed as part of the Database Labworks laboratory coursework.**
-
-</div>
+[Run the exercises](docs/reproduce.md) · [Course materials](https://drive.google.com/drive/folders/1xWdXTM-DHS33Xp8yfGxYs5w5pu1XZqEf)

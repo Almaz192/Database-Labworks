@@ -1,0 +1,5 @@
+\pset pager off
+\echo Week 3 - Basic psql Commands
+\dt week03.*
+\d week03.students
+\ir verify.sql

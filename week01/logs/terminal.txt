@@ -1,0 +1,43 @@
+-- Week 1: relational database terminology with a small working table.
+BEGIN;
+BEGIN
+CREATE SCHEMA week01;
+CREATE SCHEMA
+CREATE TABLE week01.students (
+    student_id INTEGER PRIMARY KEY,
+    student_name VARCHAR(100) NOT NULL,
+    faculty VARCHAR(50) NOT NULL
+);
+CREATE TABLE
+INSERT INTO week01.students VALUES
+    (1, 'Alymbek', 'COMSEH'),
+    (2, 'Timur', 'MED'),
+    (3, 'Beka', 'MAT');
+INSERT 0 3
+SELECT * FROM week01.students ORDER BY student_id;
+ student_id | student_name | faculty 
+------------+--------------+---------
+          1 | Alymbek      | COMSEH
+          2 | Timur        | MED
+          3 | Beka         | MAT
+(3 rows)
+
+SELECT COUNT(*) AS row_count FROM week01.students;
+ row_count 
+-----------
+         3
+(1 row)
+
+SELECT column_name, data_type, is_nullable
+FROM information_schema.columns
+WHERE table_schema = 'week01' AND table_name = 'students'
+ORDER BY ordinal_position;
+ column_name  |     data_type     | is_nullable 
+--------------+-------------------+-------------
+ student_id   | integer           | NO
+ student_name | character varying | NO
+ faculty      | character varying | NO
+(3 rows)
+
+COMMIT;
+COMMIT

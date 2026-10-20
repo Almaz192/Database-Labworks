@@ -1,0 +1,3 @@
+\pset pager off
+\echo Week 2 - Installing PostgreSQL and pgAdmin
+\ir verify.sql

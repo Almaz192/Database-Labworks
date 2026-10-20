@@ -1,0 +1,3 @@
+\pset pager off
+\echo Week 7 - Primary Keys
+\ir verify.sql
