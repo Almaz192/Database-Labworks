@@ -1,2 +1,0 @@
-# Preserve the original padding and blank lines in captured psql transcripts.
-week*/logs/*.txt -whitespace

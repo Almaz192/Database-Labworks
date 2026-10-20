@@ -1,3 +1,0 @@
-\pset pager off
-\echo Week 8 - Foreign Keys and Relationships
-\ir verify.sql

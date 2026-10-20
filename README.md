@@ -2,7 +2,7 @@
 
 **Almaz Akzholtoev** · PostgreSQL · macOS
 
-Laboratory work for Weeks 1–8. Each folder contains a short report, runnable SQL, command output, and screenshots.
+Laboratory work for Weeks 1–8. Each folder contains SQL files, a short report, and results.
 
 | Week | Laboratory work |
 | --- | --- |
@@ -14,5 +14,3 @@ Laboratory work for Weeks 1–8. Each folder contains a short report, runnable S
 | 6 | [Tables, Data Types and Constraints](week06/README.md) |
 | 7 | [Primary Keys](week07/README.md) |
 | 8 | [Foreign Keys and Relationships](week08/README.md) |
-
-[Run the exercises](docs/reproduce.md) · [Course materials](https://drive.google.com/drive/folders/1xWdXTM-DHS33Xp8yfGxYs5w5pu1XZqEf)

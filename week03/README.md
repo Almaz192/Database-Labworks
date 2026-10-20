@@ -1,19 +1,9 @@
 # Week 3 — Basic psql Commands
 
-Connected with psql, listed databases with `\l`, reconnected with `\connect`, listed tables with `\dt`, inspected the student table with `\d`, and opened SELECT help with `\h SELECT`.
+Connected with psql and used `\l`, `\connect`, `\dt`, `\d`, and `\h SELECT`. Created a student table, inserted Alice and Bob, retrieved the records, and practiced dropping a separate test table.
 
-The table contains Alice (21) and Bob (23). A separate disposable table demonstrates DROP TABLE. In an interactive session, `\?` lists meta-commands and `\q` exits psql; the script runner exits when its file ends.
+[SQL](lab.sql) · [Verification](verify.sql) · [Lesson](https://docs.google.com/document/d/1jPfbRCXJYQPcMFPMhifz3LVRFjCeswUB/edit)
 
-The original submitted Terminal screenshot is retained alongside the current run's full psql transcript.
+![Week 3 pgAdmin psql result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/e48fdd9c608a3d80b7245bc20fc95a9d638d95fc/week03/screenshots/pgadmin-result.jpg)
 
-[SQL exercise](lab.sql) · [pgAdmin verification](verify.sql) · [Full psql output](logs/terminal.txt) · [Source lesson](https://docs.google.com/document/d/1jPfbRCXJYQPcMFPMhifz3LVRFjCeswUB/edit)
-
-## Result
-
-![Week 3 live pgAdmin psql result](screenshots/pgadmin-result.jpg)
-
-## Original Terminal screenshot
-
-![Original Week 3 Terminal screenshot](screenshots/original-terminal.png)
-
-[Back to all labs](../README.md)
+[All labs](../README.md)

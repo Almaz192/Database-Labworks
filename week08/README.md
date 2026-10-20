@@ -1,19 +1,13 @@
 # Week 8 — Foreign Keys and Relationships
 
-Implemented one-to-many departments and students, one-to-one profiles with shared primary keys, and many-to-many course enrollment with a junction table. Foreign keys are defined inline, as named constraints, and with ALTER TABLE.
+Created one-to-one, one-to-many, and many-to-many relationships using foreign keys. Verified referential integrity and the effects of ON UPDATE CASCADE, ON DELETE CASCADE, RESTRICT, SET NULL, and SET DEFAULT.
 
-Eight checks cover orphan insertion, invalid foreign-key updates, restricted parent deletion, one-to-one uniqueness, ON UPDATE CASCADE, ON DELETE CASCADE, ON DELETE SET NULL, and ON DELETE SET DEFAULT. Cascade demonstrations use a separate disposable student.
+[SQL](lab.sql) · [Verification](verify.sql) · [Relationships](relationships.sql) · [Lesson](https://docs.google.com/document/d/1HLQfBeDeBlFqEo0Z8jtA9E8YW-AmAQfw/edit)
 
-SET DEFAULT requires an existing referenced default row. PostgreSQL's default foreign-key action is NO ACTION; RESTRICT differs in constraint-check timing. The [relationship query](relationships.sql) displays the three remaining students and their course enrollments.
+![Week 8 pgAdmin psql result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/e48fdd9c608a3d80b7245bc20fc95a9d638d95fc/week08/screenshots/pgadmin-result.jpg)
 
-[SQL exercise](lab.sql) · [pgAdmin verification](verify.sql) · [Full psql output](logs/terminal.txt) · [Source lesson](https://docs.google.com/document/d/1HLQfBeDeBlFqEo0Z8jtA9E8YW-AmAQfw/edit)
+![Week 8 relationships](https://raw.githubusercontent.com/Almaz192/Database-Labworks/e48fdd9c608a3d80b7245bc20fc95a9d638d95fc/week08/screenshots/pgadmin-relationships.jpg)
 
-## Result
+![Week 8 Query Tool result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/e48fdd9c608a3d80b7245bc20fc95a9d638d95fc/week08/screenshots/pgadmin-query-tool.jpg)
 
-![Week 8 live pgAdmin psql result](screenshots/pgadmin-result.jpg)
-
-![Week 8 relationships](screenshots/pgadmin-relationships.jpg)
-
-![Week 8 graphical Query Tool result](screenshots/pgadmin-query-tool.jpg)
-
-[Back to all labs](../README.md)
+[All labs](../README.md)

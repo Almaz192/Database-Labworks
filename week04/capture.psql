@@ -1,3 +1,0 @@
-\pset pager off
-\echo Week 4 - First SQL Query
-\ir verify.sql

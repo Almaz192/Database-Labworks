@@ -1,23 +1,9 @@
 # Week 2 — Installing PostgreSQL and pgAdmin
 
-Verified the existing Homebrew PostgreSQL 18.6 installation and connected through psql and pgAdmin 4. The server uses localhost port 5432 and the macOS database role `akzholtoev`.
+Verified PostgreSQL 18.6 installed through Homebrew and connected using psql and pgAdmin 4. The local connection uses `localhost:5432`, database `database_labworks_20261020`, and role `akzholtoev`.
 
-The lesson's installation commands are provided for reference:
+[SQL](lab.sql) · [Verification](verify.sql) · [Lesson](https://docs.google.com/document/d/1mHYboT9R0GPQhKh9muFf2Tv6AL_HQzws/edit)
 
-```bash
-brew install postgresql
-brew services start postgresql
-brew install --cask pgadmin4
-```
+![Week 2 pgAdmin psql result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/e48fdd9c608a3d80b7245bc20fc95a9d638d95fc/week02/screenshots/pgadmin-result.jpg)
 
-For a versioned formula, use the installed service name (here, `postgresql@18`). This run verified the existing installation with `psql --version`, `pg_isready`, and the SQL below; it did not reinstall software or reset passwords.
-
-pgAdmin connection: host `localhost`, port `5432`, database `database_labworks_20261020`, username `akzholtoev`. Passwords are excluded from the repository.
-
-[SQL exercise](lab.sql) · [pgAdmin verification](verify.sql) · [Full psql output](logs/terminal.txt) · [Source lesson](https://docs.google.com/document/d/1mHYboT9R0GPQhKh9muFf2Tv6AL_HQzws/edit)
-
-## Result
-
-![Week 2 live pgAdmin psql result](screenshots/pgadmin-result.jpg)
-
-[Back to all labs](../README.md)
+[All labs](../README.md)

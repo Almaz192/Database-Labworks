@@ -1,3 +1,0 @@
-\pset pager off
-\echo Week 6 - Tables Data Types and Constraints
-\ir verify.sql

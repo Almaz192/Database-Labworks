@@ -1,15 +1,9 @@
 # Week 1 — Introduction to Relational Databases
 
-A database stores organized data, and a DBMS manages it. Tables describe entities, rows store records, and columns hold attributes. Primary keys identify rows; foreign keys connect tables. The example stores three students and inspects their records, row count, and column types.
+Reviewed databases, DBMSs, tables, rows, columns, keys, relationships, and ACID properties. Created a student table with three records and inspected its structure.
 
-Schemas group objects, queries retrieve data, indexes support access paths, and normalization reduces duplication. Relationships can be one-to-one, one-to-many, or many-to-many. Document, key-value, wide-column, and graph databases offer other data models.
+[SQL](lab.sql) · [Verification](verify.sql) · [Lesson](https://docs.google.com/document/d/1cBOWJijltzRnv3gMqgB5YpzooXFgAG_y/edit)
 
-ACID means atomicity, consistency, isolation, and durability. PostgreSQL provides transactions and relational constraints for the exercises in this repository.
+![Week 1 pgAdmin psql result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/e48fdd9c608a3d80b7245bc20fc95a9d638d95fc/week01/screenshots/pgadmin-result.jpg)
 
-[SQL exercise](lab.sql) · [pgAdmin verification](verify.sql) · [Full psql output](logs/terminal.txt) · [Source lesson](https://docs.google.com/document/d/1cBOWJijltzRnv3gMqgB5YpzooXFgAG_y/edit)
-
-## Result
-
-![Week 1 live pgAdmin psql result](screenshots/pgadmin-result.jpg)
-
-[Back to all labs](../README.md)
+[All labs](../README.md)

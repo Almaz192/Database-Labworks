@@ -1,3 +1,0 @@
-\pset pager off
-\echo Week 1 - Introduction to Relational Databases
-\ir verify.sql

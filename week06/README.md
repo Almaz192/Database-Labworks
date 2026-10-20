@@ -1,13 +1,9 @@
 # Week 6 — Tables, Data Types and Constraints
 
-Created a table using SERIAL, VARCHAR, NUMERIC, BOOLEAN, and DATE. Practiced ALTER TABLE to add, rename, change, and drop columns and add a CHECK constraint. Created a session-local temporary table and dropped a separate demonstration table.
+Practiced data types, table creation, ALTER TABLE, temporary tables, and DROP TABLE. Verified that NOT NULL, UNIQUE, and CHECK constraints reject a missing name, a duplicate email, and a grade outside 0–100.
 
-PostgreSQL rejected a null first name, a duplicate email, and a grade of 101. Expected constraint violations are caught and recorded as PASS; an unexpectedly accepted insert aborts execution. The valid student rows remain available.
+[SQL](lab.sql) · [Verification](verify.sql) · [Lesson](https://docs.google.com/document/d/1VbzMZLRlmZaGdtf2FBgx3tjAhQRSBaNU/edit)
 
-[SQL exercise](lab.sql) · [pgAdmin verification](verify.sql) · [Full psql output](logs/terminal.txt) · [Source lesson](https://docs.google.com/document/d/1VbzMZLRlmZaGdtf2FBgx3tjAhQRSBaNU/edit)
+![Week 6 pgAdmin psql result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/e48fdd9c608a3d80b7245bc20fc95a9d638d95fc/week06/screenshots/pgadmin-result.jpg)
 
-## Result
-
-![Week 6 live pgAdmin psql result](screenshots/pgadmin-result.jpg)
-
-[Back to all labs](../README.md)
+[All labs](../README.md)

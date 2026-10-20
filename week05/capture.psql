@@ -1,3 +1,0 @@
-\pset pager off
-\echo Week 5 - Databases
-\ir verify.sql
