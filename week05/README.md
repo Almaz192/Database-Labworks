@@ -4,6 +4,6 @@ Created a scratch database, connected to it, created and queried a table, return
 
 [SQL](lab.sql) · [Verification](verify.sql) · [Lesson](https://docs.google.com/document/d/1tACFw9v3Um6sak1ZjbQzxRur91qSvJKw/edit)
 
-![Week 5 pgAdmin psql result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/e48fdd9c608a3d80b7245bc20fc95a9d638d95fc/week05/screenshots/pgadmin-result.jpg)
+![Week 5 pgAdmin psql result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/d3f703c77235c3a65b29a5e871673c6783ba940c/.evidence/week05-result.png)
 
 [All labs](../README.md)

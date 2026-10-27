@@ -4,6 +4,6 @@ Connected with psql and used `\l`, `\connect`, `\dt`, `\d`, and `\h SELECT`. Cre
 
 [SQL](lab.sql) · [Verification](verify.sql) · [Lesson](https://docs.google.com/document/d/1jPfbRCXJYQPcMFPMhifz3LVRFjCeswUB/edit)
 
-![Week 3 pgAdmin psql result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/e48fdd9c608a3d80b7245bc20fc95a9d638d95fc/week03/screenshots/pgadmin-result.jpg)
+![Week 3 pgAdmin psql result](https://raw.githubusercontent.com/Almaz192/Database-Labworks/d3f703c77235c3a65b29a5e871673c6783ba940c/.evidence/week03-result.png)
 
 [All labs](../README.md)

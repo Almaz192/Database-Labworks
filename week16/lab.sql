@@ -1,0 +1,51 @@
+-- Week 16: commit, rollback, savepoints and isolation levels.
+CREATE SCHEMA week16;
+CREATE TABLE week16.accounts(account_id INTEGER PRIMARY KEY,name TEXT,balance NUMERIC(10,2) NOT NULL CHECK(balance>=0));
+INSERT INTO week16.accounts VALUES(1,'Alice',1000),(2,'Bob',500);
+CREATE TABLE week16.history(stage INTEGER PRIMARY KEY,operation TEXT,alice_balance NUMERIC(10,2),bob_balance NUMERIC(10,2));
+INSERT INTO week16.history SELECT 1,'Initial balances',a.balance,b.balance FROM week16.accounts a CROSS JOIN week16.accounts b WHERE a.account_id=1 AND b.account_id=2;
+BEGIN;
+UPDATE week16.accounts SET balance=balance-100 WHERE account_id=1;
+UPDATE week16.accounts SET balance=balance+100 WHERE account_id=2;
+COMMIT;
+INSERT INTO week16.history SELECT 2,'COMMIT transfer 100',a.balance,b.balance FROM week16.accounts a CROSS JOIN week16.accounts b WHERE a.account_id=1 AND b.account_id=2;
+BEGIN;
+UPDATE week16.accounts SET balance=balance-50 WHERE account_id=1;
+UPDATE week16.accounts SET balance=balance+50 WHERE account_id=2;
+ROLLBACK;
+INSERT INTO week16.history SELECT 3,'ROLLBACK transfer 50',a.balance,b.balance FROM week16.accounts a CROSS JOIN week16.accounts b WHERE a.account_id=1 AND b.account_id=2;
+BEGIN;
+UPDATE week16.accounts SET balance=balance-25 WHERE account_id=1;
+SAVEPOINT before_credit;
+UPDATE week16.accounts SET balance=balance+999 WHERE account_id=2;
+ROLLBACK TO SAVEPOINT before_credit;
+UPDATE week16.accounts SET balance=balance+25 WHERE account_id=2;
+RELEASE SAVEPOINT before_credit;
+COMMIT;
+INSERT INTO week16.history SELECT 4,'SAVEPOINT corrected credit',a.balance,b.balance FROM week16.accounts a CROSS JOIN week16.accounts b WHERE a.account_id=1 AND b.account_id=2;
+DO $$ BEGIN
+    BEGIN
+        UPDATE week16.accounts SET balance=balance+999 WHERE account_id=2;
+        UPDATE week16.accounts SET balance=-1 WHERE account_id=1;
+        RAISE EXCEPTION 'Negative balance was accepted';
+    EXCEPTION WHEN check_violation THEN
+        RAISE NOTICE 'Both updates in the failed block were rolled back';
+    END;
+    IF (SELECT SUM(balance) FROM week16.accounts)<>1500 THEN RAISE EXCEPTION 'Atomicity/consistency failed'; END IF;
+END $$;
+BEGIN ISOLATION LEVEL READ UNCOMMITTED;
+SHOW transaction_isolation;
+COMMIT;
+BEGIN ISOLATION LEVEL READ COMMITTED;
+SHOW transaction_isolation;
+COMMIT;
+BEGIN ISOLATION LEVEL REPEATABLE READ;
+SHOW transaction_isolation;
+COMMIT;
+BEGIN ISOLATION LEVEL SERIALIZABLE;
+SHOW transaction_isolation;
+COMMIT;
+CREATE TABLE week16.isolation_probe(id INTEGER PRIMARY KEY,value INTEGER NOT NULL);
+INSERT INTO week16.isolation_probe VALUES(1,1);
+CREATE TABLE week16.isolation_results(test TEXT PRIMARY KEY,first_read INTEGER,second_read INTEGER,passed BOOLEAN NOT NULL);
+SELECT *,alice_balance+bob_balance AS total_balance FROM week16.history ORDER BY stage;
