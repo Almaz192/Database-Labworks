@@ -1,8 +1,8 @@
 # Database Labworks
 
-**Almaz Akzholtoev** · PostgreSQL · macOS
+Almaz Akzholtoev
 
-Laboratory work for Weeks 1–17. Each folder contains SQL files, a short report, and results from the local PostgreSQL server.
+PostgreSQL labs for weeks 1-17. Each folder has SQL files and results.
 
 | Week | Laboratory work |
 | --- | --- |
@@ -24,13 +24,4 @@ Laboratory work for Weeks 1–17. Each folder contains SQL files, a short report
 | 16 | [Transactions and ACID](week16/README.md) |
 | 17 | [Data Import, Export and Backup](week17/README.md) |
 
-## Running the SQL
-
-The examples use PostgreSQL 18 on macOS. Connect to a dedicated lab database with your local role, then run each `lab.sql` once, in week order, using psql. Each week has its own schema; Week 10 inspects the Week 9 design. Some files contain psql commands and must not be run as a whole in Query Tool.
-
-```sh
-psql -X -v ON_ERROR_STOP=1 -h localhost -U akzholtoev -d database_labworks_20261020 -f week09/lab.sql
-psql -X -v ON_ERROR_STOP=1 -h localhost -U akzholtoev -d database_labworks_20261020 -f week09/verify.sql
-```
-
-The `verify.sql` files are read-only and can be rerun in psql or pgAdmin Query Tool. Week 16 describes the two-session isolation tests; Week 17 includes the file import and backup commands.
+[Course materials](https://drive.google.com/drive/folders/1xWdXTM-DHS33Xp8yfGxYs5w5pu1XZqEf)
