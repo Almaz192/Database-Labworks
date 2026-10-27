@@ -15,14 +15,9 @@ SELECT name, email FROM week04.students;
 SELECT * FROM week04.students;
 SELECT student_id, faculty FROM week04.students;
 SELECT name, email FROM week04.students WHERE name = 'Timur';
--- The handout omits the sort expression after ORDER BY. Sort by name.
 SELECT name, email FROM week04.students ORDER BY name ASC;
--- Explicit ordering makes the LIMIT result repeatable.
 SELECT name, email FROM week04.students ORDER BY student_id LIMIT 2;
--- The handout's faculty examples do not occur in its three sample rows.
 SELECT name, email FROM week04.students WHERE faculty = 'COM-25';
 SELECT name, faculty FROM week04.students WHERE faculty = 'Engineering';
-/* A matching faculty filter.
-   PostgreSQL ignores both single-line and multi-line comments. */
 SELECT name, faculty FROM week04.students WHERE faculty = 'COMSEH';
 COMMIT;

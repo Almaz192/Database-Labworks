@@ -1,5 +1,4 @@
--- Week 5: CREATE DATABASE and DROP DATABASE cannot run in a transaction.
--- Remember the lab database before changing connections.
+-- Week 5: database creation, connections and deletion.
 \set home_db :DBNAME
 \set scratch_db :DBNAME _lab05_scratch
 CREATE SCHEMA week05;
@@ -21,7 +20,6 @@ SELECT * FROM connection_check;
 \connect :home_db
 INSERT INTO week05.database_events
 VALUES (2, 'CONNECT and return', :'scratch_db', TRUE);
--- Only the scratch database successfully created above is removed.
 DROP DATABASE :"scratch_db";
 INSERT INTO week05.database_events
 SELECT 3, 'DROP DATABASE', :'scratch_db',

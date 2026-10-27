@@ -12,6 +12,4 @@ CREATE TABLE week17.pipe_import(LIKE week17.students INCLUDING ALL);
 CREATE TABLE week17.migration_target(LIKE week17.students INCLUDING ALL);
 CREATE TABLE week17.backup_checks(test TEXT PRIMARY KEY,passed BOOLEAN NOT NULL,details TEXT);
 COMMIT;
--- Run the CSV export/import and pg_dump/pg_restore commands in the README.
--- Inspect the sample rows; the README includes field-by-field round-trip checks.
 SELECT * FROM week17.students ORDER BY student_id;

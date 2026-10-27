@@ -9,7 +9,6 @@ Exported and imported CSV data, tested custom delimiters and NULL markers, migra
 Run `lab.sql` once in a fresh lab database first. The commands below show the actual workflow; use new restore-database names when repeating it. Run the copy commands inside psql and the backup commands in Terminal. `COPY` uses a server-side path; `\\copy` accesses files as the client user.
 
 ```sql
--- In psql, using an existing writable folder such as /tmp:
 COPY (SELECT * FROM week17.students ORDER BY student_id)
 TO '/tmp/students.csv' WITH (FORMAT csv, HEADER true, NULL 'NULL');
 COPY week17.imported_students FROM '/tmp/students.csv'
@@ -24,7 +23,6 @@ SELECT * FROM week17.imported_students
 ON CONFLICT (student_id) DO UPDATE SET
 name=EXCLUDED.name, faculty=EXCLUDED.faculty, note=EXCLUDED.note;
 
--- Both differences must be empty; repeat for pipe_import and migration_target.
 (SELECT * FROM week17.students EXCEPT ALL SELECT * FROM week17.imported_students)
 UNION ALL
 (SELECT * FROM week17.imported_students EXCEPT ALL SELECT * FROM week17.students);

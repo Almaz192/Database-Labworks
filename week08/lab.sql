@@ -2,20 +2,17 @@
 BEGIN;
 CREATE SCHEMA week08;
 CREATE TABLE week08.departments(department_id INTEGER PRIMARY KEY,department_name TEXT NOT NULL);
--- Inline FK: one department can have many students.
 CREATE TABLE week08.students(
     student_id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
     department_id INTEGER REFERENCES week08.departments(department_id)
         ON UPDATE CASCADE ON DELETE RESTRICT
 );
--- Shared primary key: each student can have at most one profile.
 CREATE TABLE week08.student_profiles(
     student_id INTEGER PRIMARY KEY REFERENCES week08.students(student_id) ON UPDATE CASCADE ON DELETE CASCADE,
     biography TEXT
 );
 CREATE TABLE week08.courses(course_id INTEGER PRIMARY KEY,title TEXT NOT NULL);
--- Named table constraints and a junction table implement many-to-many.
 CREATE TABLE week08.enrollments(
     student_id INTEGER,
     course_id INTEGER,
@@ -25,7 +22,6 @@ CREATE TABLE week08.enrollments(
     CONSTRAINT fk_enrollment_course FOREIGN KEY(course_id)
         REFERENCES week08.courses(course_id) ON DELETE CASCADE
 );
--- Add a foreign key to an existing table.
 CREATE TABLE week08.student_contacts(contact_id INTEGER PRIMARY KEY,student_id INTEGER,email TEXT);
 ALTER TABLE week08.student_contacts ADD CONSTRAINT fk_contact_student
     FOREIGN KEY(student_id) REFERENCES week08.students(student_id) ON UPDATE CASCADE ON DELETE SET NULL;
@@ -66,7 +62,6 @@ DO $$ BEGIN
         RAISE NOTICE 'PASS: one-to-one duplicate profile rejected';
     END;
 END $$;
--- Perform referential-action demonstrations on a dedicated extra student.
 INSERT INTO week08.students VALUES(90,'Cascade demo',2);
 INSERT INTO week08.student_profiles VALUES(90,'Disposable demonstration profile');
 INSERT INTO week08.enrollments VALUES(90,101);

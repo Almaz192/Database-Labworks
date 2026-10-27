@@ -1,4 +1,4 @@
--- Week 10: psql metadata commands (execute through psql).
+-- Week 10: psql metadata commands.
 CREATE SCHEMA week10;
 \dn week*
 \dt week09.*
